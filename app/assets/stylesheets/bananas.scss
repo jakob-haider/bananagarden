@@ -1,0 +1,43 @@
+// Place all the styles related to the Bananas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//<g id="Ebene_2">
+//<polyline class="st0"
+
+g #Ebene_2 polyline .st0{
+  fill: red;
+}
+
+.st1{
+
+  background-color: orange;
+}
+
+.container{
+  width: 200px;
+  height: 200px;
+  //position: absolute;
+  top: 250px;
+  left: 250px;
+}
+
+.fgimg {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+}
+
+.bgimg {
+  z-index: 0;
+  fill: red;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+}
+.st0{
+  fill: #000000;
+}

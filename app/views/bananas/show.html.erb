@@ -1,0 +1,87 @@
+<p id="notice"><%= notice %></p>
+
+<!--<div class="container">-->
+  <%#= embed_svg "banana.svg" %>
+  <%#= embed_svg "banana-bg.svg" %>
+<!--</div>-->
+
+<!--<div class="container">-->
+  <%#= image_tag "Element1.png", class: "st1"%>
+<!--</div>-->
+
+
+
+<!--<svg xmlns="http://www.w3.org/2000/svg" src="banana.svg" version="1.1" width="300px" height="300px" viewBox="0 0 300 300">-->
+<!--style = "fill: #FF931E"-->
+<!--</svg>-->
+
+<!--<div class="container">-->
+  <%#= image_tag "001-mushroom.png", class: 'fgimg' %>
+  <%#= image_tag "007-fruit-1.png", class: 'fgimg'%>
+<!--</div>-->
+<%#= gridhelper 2, 2 %>
+<%#= inline_svg "banana.svg" %>
+<%#= inline_svg "banana.svg" %>
+
+<p>
+  <strong>Numid:</strong>
+  <%= @banana.numid %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @banana.color %>
+</p>
+
+<p>
+  <strong>Ripestate:</strong>
+  <%= @banana.ripeState %>
+</p>
+
+<p>
+  <strong>Ripeness:</strong>
+  <%= @banana.ripeness %>
+</p>
+
+<p>
+  <strong>Ripeness:</strong>
+  <%= imghelper @banana.ripeness %>
+</p>
+
+<p>
+  <strong>Specialtype:</strong>
+  <%= @banana.specialtype %>
+</p>
+
+<p>
+  <strong>Slottime:</strong>
+  <%= @banana.slottime %>
+</p>
+
+<p>
+  <strong>Ismaxripe:</strong>
+  <%= @banana.ismaxripe %>
+</p>
+
+<p>
+  <strong>Nexttime:</strong>
+  <%= @banana.nexttime %>
+</p>
+
+<p>
+  <strong>Garden:</strong>
+  <%= @banana.garden %>
+</p>
+
+<p>
+  <strong>Posx:</strong>
+  <%= @banana.posx %>
+</p>
+
+<p>
+  <strong>Posy:</strong>
+  <%= @banana.posy %>
+</p>
+
+<%= link_to 'Edit', edit_banana_path(@banana) %> |
+<%= link_to 'Back', bananas_path %>

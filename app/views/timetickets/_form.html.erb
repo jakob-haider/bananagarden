@@ -1,0 +1,27 @@
+<%= form_with(model: timeticket, local: true) do |form| %>
+  <% if timeticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(timeticket.errors.count, "error") %> prohibited this timeticket from being saved:</h2>
+
+      <ul>
+      <% timeticket.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :banana_id %>
+    <%= form.text_field :banana_id, id: :timeticket_banana_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.datetime_select :time, id: :timeticket_time %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

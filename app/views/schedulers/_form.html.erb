@@ -1,0 +1,17 @@
+<%= form_with(model: scheduler, local: true) do |form| %>
+  <% if scheduler.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(scheduler.errors.count, "error") %> prohibited this scheduler from being saved:</h2>
+
+      <ul>
+      <% scheduler.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

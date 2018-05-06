@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sizex:</strong>
+  <%= @garden.sizex %>
+</p>
+
+<p>
+  <strong>Sizey:</strong>
+  <%= @garden.sizey %>
+</p>
+<table>
+  <tbody>
+  <% rowid = 0%>
+  <% @bananas.in_groups_of(@garden.sizex) do |rows| %>
+    <tr>
+      <% rowid += 1%>
+      <% colid = 0%>
+      <% rows.each do |b| %>
+          <% colid += 1%>
+          <% tostring = "#{rowid}-#{colid}"%>
+        <td id="<%= tostring %>" class="ban">>
+          <%= imghelper b.ripeness %>
+        </td>
+      <% end %>
+    </tr>
+  <% end%>
+  </tbody>
+</table>
+
+
+
+  <%= link_to 'Edit', edit_garden_path(@garden) %> |
+  <%= link_to 'Back', gardens_path %>
+
+  <%# if @garden.bananas then @garden.bananas.each do |banana| %>
+<%#= svg_embed "banana.svg" %>
+<!--<p>hello</p>-->
+<!--    todo cross reference mit belongs_to funktioniert hier-->
+  <%# end end %>
+
+

@@ -1,0 +1,72 @@
+<%= form_with(model: banana, local: true) do |form| %>
+  <% if banana.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(banana.errors.count, "error") %> prohibited this banana from being saved:</h2>
+
+      <ul>
+      <% banana.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :numid %>
+    <%= form.number_field :numid, id: :banana_numid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color, id: :banana_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ripeState %>
+    <%= form.text_field :ripeState, id: :banana_ripeState %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ripeness %>
+    <%= form.number_field :ripeness, id: :banana_ripeness %>
+  </div>
+
+  <div class="field">
+    <%= form.label :specialtype %>
+    <%= form.text_field :specialtype, id: :banana_specialtype %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slottime %>
+    <%= form.text_field :slottime, id: :banana_slottime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ismaxripe %>
+    <%= form.check_box :ismaxripe, id: :banana_ismaxripe %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nexttime %>
+    <%= form.datetime_select :nexttime, id: :banana_nexttime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :garden_id %>
+    <%= form.text_field :garden_id, id: :banana_garden_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :posx %>
+    <%= form.number_field :posx, id: :banana_posx %>
+  </div>
+
+  <div class="field">
+    <%= form.label :posy %>
+    <%= form.number_field :posy, id: :banana_posy %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

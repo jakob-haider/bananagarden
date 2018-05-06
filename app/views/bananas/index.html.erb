@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bananas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numid</th>
+      <th>Color</th>
+      <th>Ripestate</th>
+      <th>Ripeness</th>
+      <th>Specialtype</th>
+      <th>Slottime</th>
+      <th>Ismaxripe</th>
+      <th>Nexttime</th>
+      <th>Garden</th>
+      <th>Posx</th>
+      <th>Posy</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bananas.each do |banana| %>
+      <tr>
+        <td><%= banana.numid %></td>
+        <td><%= imghelper(banana.ripeness)%></td>
+        <td><%= banana.ripeState %></td>
+        <td><%= banana.ripeness %></td>
+        <td><%= banana.specialtype %></td>
+        <td><%= banana.slottime %></td>
+        <td><%= banana.ismaxripe %></td>
+        <td><%= banana.nexttime %></td>
+        <td><%= banana.garden.id %></td>
+        <td><%= banana.posx %></td>
+        <td><%= banana.posy %></td>
+        <td><%= link_to 'Show', banana %></td>
+        <td><%= link_to 'Edit', edit_banana_path(banana) %></td>
+        <td><%= link_to 'Destroy', banana, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%#= gridhelper 3, 2 %>
+
+
+<!--<table>-->
+<!--  <tbody>-->
+  <%# @bananas.in_groups_of(3) do |rows| %>
+<!--    <tr>-->
+    <%# rows.each do |b| %>
+<!--    <td>-->
+<!--      hello-->
+      <%#= imghelper b.ripeness %>
+<!--    </td>-->
+    <%# end %>
+<!--    </tr>-->
+  <%# end%>
+<!--  </tbody>-->
+<!--</table>-->
+
+
+
+<%= link_to 'New Banana', new_banana_path %>

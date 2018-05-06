@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: Gardens
+#
+#  id         :integer          not null, primary key
+#  sizex      :integer
+#  sizey      :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sizex: 1
+  sizey: 1
+
+two:
+  sizex: 1
+  sizey: 1

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Banana:</strong>
+  <%= @timeticket.banana %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @timeticket.time %>
+</p>
+
+<%= link_to 'Edit', edit_timeticket_path(@timeticket) %> |
+<%= link_to 'Back', timetickets_path %>

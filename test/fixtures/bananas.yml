@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numid: 1
+  color: MyString
+  ripeState: MyString
+  ripeness: 1
+  specialtype: MyString
+  slottime: MyString
+  ismaxripe: false
+  nexttime: 2018-04-29 13:41:55
+  garden: one
+  posx: 1
+  posy: 1
+
+two:
+  numid: 1
+  color: MyString
+  ripeState: MyString
+  ripeness: 1
+  specialtype: MyString
+  slottime: MyString
+  ismaxripe: false
+  nexttime: 2018-04-29 13:41:55
+  garden: two
+  posx: 1
+  posy: 1
