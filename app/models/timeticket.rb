@@ -1,4 +1,4 @@
 class Timeticket < ApplicationRecord
   belongs_to :banana
-  belongs_to :scheduler
+  # todo is there only one scheduler?
 end

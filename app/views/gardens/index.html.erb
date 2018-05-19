@@ -12,6 +12,9 @@
   </thead>
 
   <tbody>
+    <%# if @gardens.nil? %>
+    <%# #todo render something .. %>
+    <%# else %>
     <% @gardens.each do |garden| %>
       <tr>
         <td><%= garden.sizex %></td>
@@ -21,9 +24,10 @@
         <td><%= link_to 'Destroy', garden, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <%# end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Gardens', new_garden_path %>
+<%= link_to 'New Garden', new_garden_path %>

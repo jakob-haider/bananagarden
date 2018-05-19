@@ -11,9 +11,11 @@ class GardensController < ApplicationController
   # GET /Gardens/1
   # GET /Gardens/1.json
   def show
-    set_bananas
-    @garden.run_scheduler
-    updategrid
+    # set_bananas
+    Thread.new do
+      puts "starting scheduler"
+      @garden.run_scheduler
+    end
   end
 
   # GET /Gardens/new
@@ -34,12 +36,11 @@ class GardensController < ApplicationController
   # POST /Gardens
   # POST /Gardens.json
   def create
-    @garden = Garden.new(garden_params)
-    @garden.newfield
-
+    @garden = Garden.create(garden_params)
+    # @garden.newfield
     respond_to do |format|
       if @garden.save
-        format.html { redirect_to @garden, notice: 'Gardens was successfully created.' }
+        format.html { redirect_to @garden, notice: 'Garden was successfully created.' }
         format.json { render :show, status: :created, location: @garden }
       else
         format.html { render :new }
@@ -53,7 +54,7 @@ class GardensController < ApplicationController
   def update
     respond_to do |format|
       if @garden.update(garden_params)
-        format.html { redirect_to @garden, notice: 'Gardens was successfully updated.' }
+        format.html { redirect_to @garden, notice: 'Garden was successfully updated.' }
         format.json { render :show, status: :ok, location: @garden }
       else
         format.html { render :edit }
@@ -67,7 +68,7 @@ class GardensController < ApplicationController
   def destroy
     @garden.destroy
     respond_to do |format|
-      format.html { redirect_to gardens_url, notice: 'Gardens was successfully destroyed.' }
+      format.html { redirect_to gardens_url, notice: 'Garden was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

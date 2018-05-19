@@ -30,10 +30,10 @@ class BananasController < ApplicationController
     respond_to do |format|
       if @banana.save
         format.html { redirect_to @banana, notice: 'Banana was successfully created.' }
-        # format.json { render :show, status: :created, location: @banana }
+        format.json { render :show, status: :created, location: @banana }
       else
         format.html { render :new }
-        # format.json { render json: @banana.errors, status: :unprocessable_entity }
+        format.json { render json: @banana.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -71,6 +71,6 @@ class BananasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def banana_params
-      params.require(:banana).permit(:numid, :color, :ripeState, :ripeness, :specialtype, :slottime, :ismaxripe, :nexttime, :garden_id, :posx, :posy)
+      params.require(:banana).permit(:numid, :color, :ripeState, :ripeness, :specialtype, :ismaxripe, :nexttime, :garden_id, :posx, :posy)
     end
 end

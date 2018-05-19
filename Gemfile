@@ -56,3 +56,4 @@ gem 'rails-erd', group: :development
 # gem 'inline_svg'
 # source 'https://rails-assets.org'
 # gem 'rails-assets-observer'
+gem 'seed_dump'

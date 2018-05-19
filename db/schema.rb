@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180502102410) do
+ActiveRecord::Schema.define(version: 20180506112545) do
 
   create_table "bananas", force: :cascade do |t|
     t.integer "numid"
@@ -18,9 +18,7 @@ ActiveRecord::Schema.define(version: 20180502102410) do
     t.string "ripeState"
     t.integer "ripeness"
     t.string "specialtype"
-    t.string "slottime"
     t.boolean "ismaxripe"
-    t.datetime "nexttime"
     t.integer "garden_id"
     t.integer "posx"
     t.integer "posy"
@@ -30,19 +28,17 @@ ActiveRecord::Schema.define(version: 20180502102410) do
   end
 
   create_table "fields", force: :cascade do |t|
-    t.integer "garden_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["garden_id"], name: "index_fields_on_garden_id"
   end
 
   create_table "gardens", force: :cascade do |t|
     t.integer "sizex"
     t.integer "sizey"
-    t.integer "scheduler_id"
+    t.integer "field_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["scheduler_id"], name: "index_gardens_on_scheduler_id"
+    t.index ["field_id"], name: "index_gardens_on_field_id"
   end
 
   create_table "inventories", force: :cascade do |t|
@@ -51,8 +47,18 @@ ActiveRecord::Schema.define(version: 20180502102410) do
   end
 
   create_table "schedulers", force: :cascade do |t|
+    t.integer "garden_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["garden_id"], name: "index_schedulers_on_garden_id"
+  end
+
+  create_table "timetickets", force: :cascade do |t|
+    t.integer "banana_id"
+    t.datetime "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["banana_id"], name: "index_timetickets_on_banana_id"
   end
 
 end
