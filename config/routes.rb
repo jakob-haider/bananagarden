@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :fields
   get 'field/index'
 
+  root to: 'gardens#index'
+
   resources :inventories
   resources :schedulers
   resources :gardens
